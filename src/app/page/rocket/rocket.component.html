@@ -1,0 +1,55 @@
+<div c class="rocket-data" fxFlex="100" fxFlex.gt-sm="80">
+  <div fxFlex="20" class="rocket-data__left">
+    <div fxFlex="90" class="rocket-data__image" [ngStyle]="{'background-image': 'url(../assets/images/' + id + '_sample.svg)'}"></div>
+  </div>
+  <div fxFlex="80" class="rocket-data__right">
+    <div class="rocket-section">
+      <h2 class="mat-display-3 text-light">{{ rocket?.name }}</h2>
+      <p class="mat-headline text-light nm-bottom">{{ rocket?.description }}</p>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="rocket-section" fxLayoutAlign="center start">
+      <h2 class="mat-display-2 text-light nm-bottom">First flight - {{rocket?.first_flight !== 'TBD' ? (rocket?.first_flight | date: 'MMM d, y') : 'TBD'}}</h2>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="rocket-section">
+      <h2 class="mat-title nm-bottom" fxLayoutWrap fxLayoutAlign="space-between start">
+        <span class="text-light text-uppercase">Mass</span>
+        <div fxLayout.xs="column">
+          <x-spinup fxFlex="50" [data]="mass.kg"></x-spinup>
+          <x-spinup fxFlex="50" [data]="mass.lb"></x-spinup>
+        </div>
+      </h2>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="rocket-section">
+      <h2 class="mat-title nm-bottom" fxLayoutWrap fxLayoutAlign="space-between start">
+        <span class="text-light text-uppercase">Diameter</span>
+        <div fxLayout.xs="column" fxLayoutAlign="space-around start">
+          <x-spinup fxFlex="50" [data]="diameter.feet"></x-spinup>
+          <x-spinup fxFlex="50" [data]="diameter.meters"></x-spinup>
+        </div>
+      </h2>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="rocket-section">
+      <h2 class="mat-title nm-bottom" fxLayoutWrap fxLayoutAlign="space-between start">
+        <span class="text-light text-uppercase">Height</span>
+        <div fxLayout.xs="column" fxLayoutAlign="space-around start">
+          <x-spinup fxFlex="50" [data]="height.feet"></x-spinup>
+          <x-spinup fxFlex="50" [data]="height.meters"></x-spinup>
+        </div>
+      </h2>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="rocket-section">
+      <p class="mat-headline text-light">
+        The first stage sees {{ rocket?.first_stage.thrust_sea_level.lbf | number }} lbf lift the {{ rocket?.name }}, using {{ rocket?.first_stage.engines }} Engines with a Burn Time of {{ rocket?.first_stage.burn_time_sec }} seconds.
+      </p>
+    </div>
+    <div class="rocket-section">
+      <p class="mat-headline text-light nm-bottom">
+        The {{ rocket?.name }} uses  {{ rocket?.second_stage.engines }} {{ rocket?.second_stage.engines === 1 ? 'Engine' : 'Engines' }} in its second stage with a Burn Time of {{ rocket?.second_stage.burn_time_sec }} seconds.
+    </div>
+  </div>
+</div>

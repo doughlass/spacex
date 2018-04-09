@@ -1,0 +1,13 @@
+<div fxFlex="100" class="data-block mat-elevation-z2" fxLayoutWrap routerLink="/rockets/{{ rocket?.id }}">
+  <div fxFlex="100" fxFlex.gt-sm="50" class="data-block__left">
+    <div class="data-block__left-content" fxFlex="90">
+      <h2 class="mat-display-3">{{ rocket?.name }}</h2>
+      <div fxLayoutWrap fxLayout.xs="column">
+        <x-cost-per-launch fxFlex="50" [value]="rocket?.cost_per_launch"></x-cost-per-launch>
+        <x-success-rate fxFlex="50" [value]="rocket?.success_rate_pct"></x-success-rate>
+      </div>
+    </div>
+  </div>
+  <div fxFlex="100" fxFlex.gt-sm="50" class="data-block__right data-block__image" [ngStyle]="{'background-image': 'url(./assets/images/' + rocket?.id + '.jpg)'}">
+  </div>
+</div>

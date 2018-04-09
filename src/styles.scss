@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body, .content {
+  height: 100%;
+}
+
+body {
+  background-color: #303030;
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+.x-loading {
+  font-family: Roboto, Arial, sans-serif;
+}
+
+x-data-block:nth-child(2) {
+  .data-block {
+    flex-direction: row-reverse;
+  }
+}
+
+:host { 
+    min-height: 100%;
+    display: flex;
+}
+
+.text {
+  &-light {
+    font-weight: 100;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
+}

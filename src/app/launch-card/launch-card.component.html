@@ -1,0 +1,17 @@
+<div fxFlex="100" class="launch-card">
+  <h1 class="mat-headline launch-title">{{ title }}</h1>
+  <div fxLayout="column" fxLayoutGap="16px">
+    <mat-card class="data-card mat-elevation-z2" *ngFor="let launch of launches;" fxFlex.gt-xs="calc(50% - 16px)">
+      <mat-card-header>
+        <mat-card-title class="data-card__title" fxLayout="row">
+          <h1 class="mat-title">
+            {{ launch?.rocket?.rocket_name }}
+          </h1>
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{ launch?.launch_date_utc | date:'MMM d, y'}}
+        </mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+</div>

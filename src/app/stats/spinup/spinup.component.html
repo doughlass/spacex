@@ -1,0 +1,6 @@
+<div fxLayout="column" class="spin-up">
+  <span class="mat-display-2 spin-up__title" fxLayout="row" fxLayoutAlign="space-evenly start" [class]="data.switch">
+    <span countUp="{{ options }}" endVal="{{ data.value }}">0</span><span>{{ data.unit }}</span>
+  </span>
+  <span class="mat-title" fxHide>{{ data.title }}</span>
+</div>

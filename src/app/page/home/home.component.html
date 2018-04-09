@@ -1,0 +1,9 @@
+
+<div fxLayoutWrap>
+  <x-data-block [rocket]="rocket" fxFlex="100" *ngFor="let rocket of rockets"></x-data-block>
+
+  <div fxFlex="100">
+    <x-launch-card [type]="'latest'"></x-launch-card>
+    <x-launch-card [type]="'upcoming'"></x-launch-card>
+  </div>
+</div>

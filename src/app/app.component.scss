@@ -1,0 +1,16 @@
+.main-toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 84px);
+  overflow: auto;
+  padding: 16px 16px 0;
+  position: relative;
+  top: 68px;
+  z-index: 1;
+}
